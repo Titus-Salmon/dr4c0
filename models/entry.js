@@ -18,7 +18,7 @@ const Entry = sequelize.define('entry', {
     allowNull: true
   },
   blurb: {
-    type: Sequelize.STRING,
+    type: Sequelize.STRING(3333),
     allowNull: true
   },
   url: {
@@ -30,10 +30,6 @@ const Entry = sequelize.define('entry', {
     allowNull: true
   },
   date_happened: {
-    type: Sequelize.DATE,
-    allowNull: true
-  },
-  date_added: {
     type: Sequelize.DATE,
     allowNull: true
   },

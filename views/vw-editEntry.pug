@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  //- p= each entry in entries
+
+  form#editEntry.entry-form(action='/editEntry/graphql' method='POST' accept-charset="UTF-8")
+    div.form-control
+      label.input-label-1(for='topic') topic
+      input#topic.input-unit-1(type='text', placeholder='enter data', name='topicPost')
+    div.form-control
+      label.input-label-1(for='title') title
+      input#title.input-unit-1(type='text', placeholder='enter data', name='titlePost')
+    div.form-control
+      label.input-label-1(for='blurb') blurb
+      input#blurb.input-unit-1(type='text', placeholder='enter data', name='blurbPost')
+    div.form-control
+      label.input-label-1(for='url') url
+      input#url.input-unit-1(type='text', placeholder='enter data', name='urlPost')
+    div.form-control
+      label.input-label-1(for='keywords') keywords
+      input#keywords.input-unit-1(type='text', placeholder='enter data', name='keywordsPost')
+    div.form-control
+      label.input-label-1(for='date_happened') date_happened
+      input#date_happened.input-unit-1(type='date', placeholder='enter data', name='date_happenedPost', required)
+    //- div.form-control
+    //-   label.input-label-1(for='date_added') date_added
+    //-   input#date_added.input-unit-1(type='date', placeholder='enter data', name='date_addedPost', required)
+    div.form-control
+      label.input-label-1(for='cross_refs') cross_refs
+      input#cross_refs.input-unit-1(type='text', placeholder='enter data', name='cross_refsPost')
+    div.form-control
+      label.input-label-1(for='attachments') attachments
+      input#attachments.input-unit-1(type='text', placeholder='enter data', name='attachmentsPost')
+    div.form-control
+      label.input-label-1(for='note') note
+      input#note.input-unit-1(type='text', placeholder='enter data', name='notePost')
+      button(type='submit', form='editEntry') Edit Entry

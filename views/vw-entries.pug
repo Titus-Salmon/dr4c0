@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  //- p= each entry in entries
+
+  if entries !== undefined
+    each elmnt in entries
+      p= JSON.stringify(elmnt)

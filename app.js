@@ -4,11 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-// var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
-
 const dotenv = require('dotenv') //need this to access .env variables via process.env --t0d
 dotenv.config() //need this to access .env variables via process.env --t0d
+
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+var entriesRouter = require('./routes/rt-entries')
+var editEntryRouter = require('./routes/rt-editEntry')
+
+// const dotenv = require('dotenv') //need this to access .env variables via process.env --t0d
+// dotenv.config() //need this to access .env variables via process.env --t0d
 
 const sequelize_db_dr4c0 = require('./util_t0d/db_dr4c0')
 
@@ -26,8 +31,10 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+app.use('/entries', entriesRouter)
+app.use('/editEntry', editEntryRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
