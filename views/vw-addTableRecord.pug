@@ -5,7 +5,7 @@ block content
   p Welcome to #{title}
   //- p= each entry in entries
 
-  form#editEntry.entry-form(action='/editEntry/graphql' method='POST' accept-charset="UTF-8")
+  form#editTableRecord.entry-form(action='/addTableRecord/addTableRecord' method='POST' accept-charset="UTF-8")
     div.form-control
       label.input-label-1(for='topic') topic
       input#topic.input-unit-1(type='text', placeholder='enter data', name='topicPost')
@@ -36,4 +36,4 @@ block content
     div.form-control
       label.input-label-1(for='note') note
       input#note.input-unit-1(type='text', placeholder='enter data', name='notePost')
-      button(type='submit', form='editEntry') Edit Entry
+      button(type='submit', form='editTableRecord') Edit Entry

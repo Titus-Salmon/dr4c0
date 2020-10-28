@@ -1,16 +1,16 @@
-const Entry = require('../models/entry')
+const tableModel = require('../models/tableModel')
 
-exports.getEntries = (req, res, next) => {
-  Entry.findAll().then(entries => {
-    console.log(`entries==> ${entries}`)
-    res.render('vw-entries', {
-      title: `vw-entries`,
-      entries: entries,
+exports.getAllTableRecords = (req, res, next) => {
+  tableModel.findAll().then(records => {
+    console.log(`records==> ${records}`)
+    res.render('vw-getAllTableRecords', {
+      title: `vw-getAllTableRecords`,
+      records: records,
     })
   })
 }
 
-exports.addEntries = (req, res, next) => {
+exports.addTableRecord = (req, res, next) => {
   const topic = req.body.topicPost
   const title = req.body.titlePost
   const blurb = req.body.blurbPost
@@ -20,7 +20,7 @@ exports.addEntries = (req, res, next) => {
   const cross_refs = req.body.cross_refsPost
   const attachments = req.body.attachmentsPost
   const note = req.body.notePost
-  Entry.create({
+  tableModel.create({
       topic: topic,
       title: title,
       blurb: blurb,
@@ -36,8 +36,8 @@ exports.addEntries = (req, res, next) => {
       console.log(`
       result==> ${result}
         `)
-      res.render('vw-editEntry', { //render searchResults to vw-MySqlTableHub page
-        title: `vw-editEntry`,
+      res.render('vw-addTableRecord', { //render searchResults to vw-MySqlTableHub page
+        title: `vw-addTableRecord`,
         // entries: entries,
       })
     })

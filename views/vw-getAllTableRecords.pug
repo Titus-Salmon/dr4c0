@@ -5,6 +5,6 @@ block content
   p Welcome to #{title}
   //- p= each entry in entries
 
-  if entries !== undefined
-    each elmnt in entries
+  if records !== undefined
+    each elmnt in records
       p= JSON.stringify(elmnt)

@@ -1,8 +1,10 @@
-const Sequelize = require('sequelize')
+const {
+  Sequelize
+} = require('sequelize')
 
 const sequelize = require('../util_t0d/db_dr4c0')
 
-const Entry = sequelize.define('entry', {
+const tableModel = sequelize.define('entry', {
   p_k: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
@@ -47,4 +49,4 @@ const Entry = sequelize.define('entry', {
   }
 })
 
-module.exports = Entry
+module.exports = tableModel
